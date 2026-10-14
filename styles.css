@@ -1,0 +1,46 @@
+:root {
+  color: #222;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+.container { width: min(800px, calc(100% - 32px)); margin: 0 auto; }
+.site-header { padding: 26px 0 20px; border-bottom: 1px solid #ddd; }
+.site-header h1 { margin: 0 0 6px; font-size: 27px; }
+.site-header p { margin: 0; color: #666; font-size: 14px; }
+main { min-height: calc(100vh - 150px); padding: 32px 0 48px; }
+.section-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.section-heading h2 { margin: 0 auto 0 0; font-size: 21px; }
+#book-count { color: #666; font-size: 15px; font-weight: 400; }
+.search-label { color: #444; font-size: 13px; }
+#search { width: 230px; padding: 8px 10px; border: 1px solid #bbb; border-radius: 3px; }
+.filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0; }
+.filter, .details-button, .close-button { padding: 7px 10px; border: 1px solid #999; border-radius: 3px; color: #222; background: #fff; cursor: pointer; }
+.filter:hover, .details-button:hover, .close-button:hover { background: #f1f1f1; }
+.filter.is-active { color: #fff; border-color: #333; background: #333; }
+.status, .empty-state { color: #555; font-size: 14px; }
+.book-list { border-top: 1px solid #ddd; }
+.book-card { padding: 17px 0; border-bottom: 1px solid #ddd; }
+.book-card h3 { margin: 0 0 5px; font-size: 17px; }
+.book-author { margin: 0 0 9px; color: #555; font-size: 14px; }
+.book-description { margin: 0 0 9px; color: #333; font-size: 14px; line-height: 1.5; }
+.book-metadata { margin: 0 0 11px; color: #666; font-size: 12px; }
+.details-button { padding: 6px 9px; font-size: 13px; }
+.site-footer { padding: 16px 0; border-top: 1px solid #ddd; color: #666; font-size: 12px; }
+dialog { width: min(440px, calc(100% - 32px)); padding: 22px; border: 1px solid #999; border-radius: 4px; color: #222; }
+dialog::backdrop { background: #0006; }
+dialog h2 { margin: 12px 0 8px; font-size: 21px; }
+dialog p { line-height: 1.5; }
+.dialog-genre, #dialog-year { color: #666; font-size: 13px; }
+.close-button { float: right; }
+[hidden] { display: none !important; }
+@media (max-width: 560px) {
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { width: 100%; }
+  .search-label { align-self: center; }
+  #search { flex: 1; min-width: 120px; }
+}

@@ -1,0 +1,36 @@
+# Book Library
+
+A simple English book list built with Node.js and Express for the Week 6 routes assignment.
+
+## Run locally
+
+1. Install Node.js if it is not installed.
+2. In this folder, run `npm install`.
+3. Start the app with `node index.js` (or `npm start`).
+4. Open `http://localhost:3000`.
+
+If port 3000 is already in use, run `PORT=3001 node index.js` and open `http://localhost:3001`.
+
+## Routes
+
+- `GET /` serves the static page in `public/index.html`.
+- `GET /data` returns 12 book objects as JSON.
+- `GET /data/:slug` returns one book, for example `/data/piranesi`.
+- `GET /data?genre=Fantasy` returns books in the selected genre.
+
+The browser uses `fetch()` to load `/data`, requests filtered data through the query route, and loads a book's details through the path-parameter route.
+
+## Submit to GitHub
+
+Create a new empty repository on GitHub. From this project folder, run the commands below and replace the URL with your repository URL:
+
+```sh
+git init
+git add .
+git commit -m "Build simple Express book library"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git push -u origin main
+```
+
+The first line of `.gitignore` is `node_modules`, so the dependency folder will not be uploaded. GitHub Pages cannot run this server-side app; submit the GitHub repository link instead.

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple book library built with Node and Express." />
+    <title>Book Library</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Book Library</h1>
+        <p>A small collection of books to explore.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section aria-labelledby="books-heading">
+        <div class="section-heading">
+          <h2 id="books-heading">Books <span id="book-count">—</span></h2>
+          <label class="search-label" for="search">Search</label>
+          <input id="search" type="search" placeholder="Title, author, or genre" />
+        </div>
+
+        <div id="filters" class="filters" role="group" aria-label="Filter books by genre">
+          <button class="filter is-active" type="button" data-genre="all" aria-pressed="true">All</button>
+        </div>
+
+        <p id="status" class="status" role="status">Loading books…</p>
+        <div id="book-list" class="book-list" aria-live="polite"></div>
+        <p id="empty-state" class="empty-state" hidden>No books found.</p>
+      </section>
+    </main>
+
+    <dialog id="book-dialog" aria-labelledby="dialog-title">
+      <form method="dialog"><button class="close-button" aria-label="Close details">Close</button></form>
+      <p id="dialog-genre" class="dialog-genre"></p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-author"></p>
+      <p id="dialog-description"></p>
+      <p id="dialog-year"></p>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="container">Book Library · Node and Express assignment</div>
+    </footer>
+  </body>
+</html>

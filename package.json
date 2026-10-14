@@ -1,0 +1,13 @@
+{
+  "name": "shelf-notes-express",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A simple English book library built with Node and Express.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
