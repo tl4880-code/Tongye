@@ -15,15 +15,24 @@ const books = [
   { slug: "the-martian", title: "The Martian", author: "Andy Weir", genre: "Science Fiction", year: 2011, description: "An astronaut uses science and ingenuity to survive alone on Mars." },
   { slug: "braiding-sweetgrass", title: "Braiding Sweetgrass", author: "Robin Wall Kimmerer", genre: "Essays", year: 2013, description: "Botany and Indigenous knowledge offer new ways to care for nature." },
   { slug: "the-book-of-delights", title: "The Book of Delights", author: "Ross Gay", genre: "Essays", year: 2019, description: "Short essays find joy in small moments of everyday life." },
-  { slug: "crying-in-h-mart", title: "Crying in H Mart", author: "Michelle Zauner", genre: "Memoir", year: 2021, description: "A musician writes about grief, family, and food." }
+  { slug: "crying-in-h-mart", title: "Crying in H Mart", author: "Michelle Zauner", genre: "Memoir", year: 2021, description: "A musician writes about grief, family, and food." },
+  { slug: "pride-and-prejudice", title: "Pride and Prejudice", author: "Jane Austen", genre: "Classic", year: 1813, description: "Elizabeth Bennet and Mr. Darcy learn to look beyond first impressions." },
+  { slug: "the-housekeeper-and-the-professor", title: "The Housekeeper and the Professor", author: "Yoko Ogawa", genre: "Fiction", year: 2003, description: "A housekeeper and her son connect with a professor whose memory lasts only eighty minutes." }
 ];
 
 // Route 1: serve the static homepage.
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.use(express.static(path.join(__dirname, "public")));
+// Serve the homepage assets without exposing the rest of the project folder.
+app.get("/app.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "app.js"));
+});
+
+app.get("/styles.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "styles.css"));
+});
 
 // Route 2: return all books, or filter by the optional genre query parameter.
 app.get("/data", (req, res) => {
@@ -47,5 +56,5 @@ app.get("/data/:slug", (req, res) => {
 });
 
 app.listen(PORT, "127.0.0.1", () => {
-  console.log(`App is running at http://localhost:${PORT}`);
+  console.log("App is running at http://localhost:" + PORT);
 });
