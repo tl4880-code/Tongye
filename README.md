@@ -1,6 +1,6 @@
-# Book Library
+# Little Book Nook
 
-A simple English book list built with Node.js and Express for the Week 6 routes assignment.
+A simple, cozy English book shelf built with Node.js and Express for the Week 6 routes assignment.
 
 ## Run locally
 
